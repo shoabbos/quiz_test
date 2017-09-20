@@ -15,12 +15,12 @@ class TestQuestion(TestCase):
 		self.client = APIClient()
 		#Create owner for the location
 		self.user = User.objects.create_user(username="username1",
-											 password="password1")
+					password="password1")
 		self.user.set_password("password1")
 		self.user.save()
 
 		self.tenant = Tenant.objects.create(name="neosoft",
-											api_key="23cb00a63d7945eba0ff5b846de1b728")
+					  api_key="23cb00a63d7945eba0ff5b846de1b728")
 		token = Token.objects.create(user=self.user)		
 		self.access_token = 'Token ' + token.key
 
@@ -34,32 +34,32 @@ class TestQuestion(TestCase):
 
 	def test_get_questions_without_tenant_key(self):
 		response = self.client.get('/api/questions/',
-								   HTTP_AUTHORIZATION=self.access_token)
+				   HTTP_AUTHORIZATION=self.access_token)
 		self.assertEqual(response.status_code, 403)
 
 	def test_get_questions_with_login_tenant_key(self):
 		response = self.client.get('/api/questions/',
-								   HTTP_API_KEY=self.tenant.api_key,
-								   HTTP_AUTHORIZATION=self.access_token)
+				   HTTP_API_KEY=self.tenant.api_key,
+				   HTTP_AUTHORIZATION=self.access_token)
 		self.assertEqual(response.status_code, 200)
 
 	def test_private_question(self):
 		response = self.client.get('/api/questions/',
-								   HTTP_API_KEY=self.tenant.api_key,
-								   HTTP_AUTHORIZATION=self.access_token)
+				   HTTP_API_KEY=self.tenant.api_key,
+				   HTTP_AUTHORIZATION=self.access_token)
 		self.assertEqual(response.status_code, 200)
 		self.assertEqual(len(response.data), 1)
 
 	def test_get_questions_with_query_string(self):
 		response = self.client.get('/api/questions/?q=xyz',
-								   HTTP_API_KEY=self.tenant.api_key,
-								   HTTP_AUTHORIZATION=self.access_token)
+				   HTTP_API_KEY=self.tenant.api_key,
+				   HTTP_AUTHORIZATION=self.access_token)
 		self.assertEqual(response.status_code, 200)
 		self.assertEqual(len(response.data), 0)
 
 		response = self.client.get('/api/questions/?q=what',
-								   HTTP_API_KEY=self.tenant.api_key,
-								   HTTP_AUTHORIZATION=self.access_token)
+				   HTTP_API_KEY=self.tenant.api_key,
+				   HTTP_AUTHORIZATION=self.access_token)
 		self.assertEqual(response.status_code, 200)
 		self.assertEqual(len(response.data), 1)
 

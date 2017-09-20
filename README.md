@@ -2,19 +2,19 @@
 
 **Steps to run the application**
 
-**Virtual Environment :**  Create virtual environment using command *virtualenv python_test_env*
+**Virtual Environment :**  Create virtual environment using command **virtualenv python_test_env**
 
-**Activate Environment :** activate the virtual environment *source python_test_env/bin/activate*
+**Activate Environment :** Activate the virtual environment using command **source python_test_env/bin/activate**
 
-**Requirements.** install the requirements in virtual env using *pip install -r docs/requirements.txt*
+**Requirements :** Install the requirements in virtual environment using command **pip install -r docs/requirements.txt**
 
-**Make Migrations** *Python manage.py makemigrations*
+**Make Migrations :** **Python manage.py makemigrations**
 
-**Migrate** *Python manage.py migrate*
+**Migrate :** Create database using command **Python manage.py migrate**
 
-**Load Dummy Data** Load dummy data using *python manage.py initdata* .
+**Load Dummy Data :** Load dummy data using command **python manage.py initdata**
 
-**Run the Server** *Python manage.py runserver* 
+**Run the Server :** Start the server using command **python manage.py runserver** 
 
 **Demo accounts**
 
@@ -28,13 +28,15 @@
 
 **apis**
 
-* get access token
+* Get access token
      * url - /api-token-auth/ 
      * method - POST
-     * params - username, password 
+     * params - username, password - Pass these parameters in body
+     eg. {"username" : "user1",
+ 		  "password" : "password1"} 
 
-* get questions
+* Get questions
     * url - /questions
     * method - GET
-    * headers - token, api-key
+    * headers - token, api-key - pass these parameters in heade section
     * params - q (optional)
