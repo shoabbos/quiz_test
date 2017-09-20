@@ -8,9 +8,9 @@
 
 **Requirements :** Install the requirements in virtual environment using command **pip install -r docs/requirements.txt**
 
-**Make Migrations :** **Python manage.py makemigrations**
+**Make Migrations :** **python manage.py makemigrations**
 
-**Migrate :** Create database using command **Python manage.py migrate**
+**Migrate :** Create database using command **python manage.py migrate**
 
 **Load Dummy Data :** Load dummy data using command **python manage.py initdata**
 
