@@ -9,4 +9,3 @@
 **Migrate** *Python manage.py migrate*
 
 **Run the Server** *Python manage.py runserver* 
-
