@@ -4,9 +4,9 @@
 
 **Install requirements from requirements.txt .** *pip install -r docs/requirements.txt*
 
-**Command to load dummy data** *Python manage.py loaddata folder_name/file_name.json*
-
 **Make Migrations** *Python manage.py makemigrations*
+
+**Command to load dummy data** *Python manage.py loaddata folder_name/file_name.json*
 
 **Migrate** *Python manage.py migrate*
 
