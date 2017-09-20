@@ -6,7 +6,7 @@
 
 **Make Migrations** *Python manage.py makemigrations*
 
-**Migrate** *Python manage.py makemigrate*
+**Migrate** *Python manage.py migrate*
 
 **Run the Server** *Python manage.py runserver* 
 
