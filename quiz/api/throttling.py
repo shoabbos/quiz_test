@@ -4,7 +4,7 @@ from rest_framework.throttling import BaseThrottle
 
 from quiz.models import Tenant, Request
 
-class TenantRateThrottle(BaseThrottle):
+from django.conf import settings
 
 	def allow_request(self, request, view):
 
@@ -15,7 +15,7 @@ class TenantRateThrottle(BaseThrottle):
 		is_allowed = True
 		delta = now - datetime.timedelta(seconds=10)
 
-		if len(todays_requests) > 50 and todays_requests.filter(requested_on__gte=datetime.datetime.now() - datetime.timedelta(seconds=10)):
+		if len(todays_requests) > settings.TODAY_REQ and todays_requests.filter(requested_on__gte=datetime.datetime.now() - datetime.timedelta(seconds=settings.SEC_REQ)):
 			is_allowed = False
 
 		if is_allowed:
