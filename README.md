@@ -2,7 +2,7 @@
 
 **Create VirtualEnv :**  *virtualenv name_env*
 
-**Insatll requirements from requirements.txt .** *pip install -r docs/requirements.txt*
+**Install requirements from requirements.txt .** *pip install -r docs/requirements.txt*
 
 **Make Migrations** *Python manage.py makemigrations*
 
