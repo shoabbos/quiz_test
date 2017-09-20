@@ -1,12 +1,12 @@
-#Question Answer App django#
+**Question Answer App django
 
-*Create VirtualEnv :  virtualenv name_env*
+**Create VirtualEnv :**  *virtualenv name_env*
 
-*Insatll requirements from requirements.txt . pip install -r docs/requirements.txt*
+**Insatll requirements from requirements.txt .** *pip install -r docs/requirements.txt*
 
-*Make Migrations Python manage.py makemigrations*
+**Make Migrations** *Python manage.py makemigrations*
 
-*Migrate Python manage.py makemigrate*
+**Migrate** *Python manage.py makemigrate*
 
-*Python manage.py runserver *
+**Run the Server** *Python manage.py runserver* 
 
